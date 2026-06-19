@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mission — ReEnvision</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .page-hero {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--mid-blue) 100%);
+      padding: 88px 0 72px;
+      position: relative;
+      overflow: hidden;
+    }
+    .page-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 60% 80% at 80% 50%, rgba(74,159,212,0.15) 0%, transparent 70%);
+    }
+    .page-hero-inner { position: relative; z-index: 1; }
+    .page-hero h1 { color: var(--white); margin-bottom: 16px; }
+    .page-hero p  { color: rgba(255,255,255,0.7); font-size: 1.1rem; max-width: 560px; }
+
+    /* ── Mission Statement ── */
+    .mission-statement {
+      background: var(--light-bg);
+      border-left: 5px solid var(--accent);
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      padding: 32px 36px;
+      margin: 0 0 48px;
+    }
+    .mission-statement p {
+      font-family: var(--font-display);
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--navy);
+      line-height: 1.5;
+    }
+
+    /* ── Accordion / Dropdowns ── */
+    .accordion { margin-bottom: 16px; border: 1px solid var(--border); border-radius: var(--radius-md); overflow: hidden; }
+    .accordion-header {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 22px 28px;
+      background: var(--white);
+      border: none;
+      cursor: pointer;
+      text-align: left;
+      transition: var(--transition);
+      font-family: var(--font-display);
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--navy);
+    }
+    .accordion-header:hover { background: var(--light-bg); }
+    .accordion-header.open { background: var(--navy); color: var(--white); }
+    .acc-icon {
+      width: 28px; height: 28px;
+      border-radius: 50%;
+      background: var(--light-bg);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1rem;
+      color: var(--accent);
+      transition: var(--transition);
+      flex-shrink: 0;
+    }
+    .accordion-header.open .acc-icon { background: rgba(255,255,255,0.15); color: var(--baby-blue); transform: rotate(45deg); }
+    .accordion-body {
+      display: none;
+      padding: 28px 28px 32px;
+      background: var(--white);
+      border-top: 1px solid var(--border);
+    }
+    .accordion-body.open { display: block; }
+    .accordion-body p { margin-bottom: 16px; }
+    .accordion-body p:last-child { margin-bottom: 0; }
+
+    /* Team preview inside accordion */
+    .team-highlights { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 24px; }
+    .team-tag {
+      background: var(--light-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 12px 16px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--text-mid);
+    }
+
+    /* ── Approach Pillars ── */
+    .approach-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+      margin-top: 48px;
+    }
+    .approach-card {
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 32px;
+      background: var(--white);
+      box-shadow: var(--shadow-card);
+      transition: var(--transition);
+    }
+    .approach-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-hover); border-color: var(--baby-blue); }
+    .approach-icon {
+      font-size: 2rem;
+      margin-bottom: 16px;
+    }
+    .approach-card h3 { color: var(--navy); margin-bottom: 10px; }
+
+    /* ── Values Section ── */
+    .values-bg { background: var(--light-bg); }
+
+    @media (max-width: 768px) {
+      .approach-grid { grid-template-columns: 1fr; }
+      .team-highlights { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="container nav-inner">
+    <a class="nav-logo" href="index.html">Re<span>Envision</span></a>
+    <button class="nav-toggle" aria-label="Toggle menu" onclick="this.nextElementSibling.classList.toggle('open')">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="mission.html" class="active">Mission</a>
+      <a href="team.html">Team</a>
+      <a href="events.html">Events</a>
+      <a href="impact.html">Impact</a>
+      <a href="contact.html" class="nav-cta">Contact Us</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ── Page Hero ── -->
+<section class="page-hero">
+  <div class="container page-hero-inner">
+    <div class="eyebrow">Who We Are &amp; Why We Exist</div>
+    <h1>Our Mission</h1>
+    <p>Harnessing the power of artificial intelligence to create opportunity for every student, everywhere.</p>
+  </div>
+</section>
+
+<!-- ── Mission Statement + Accordions ── -->
+<section class="section">
+  <div class="container" style="max-width:860px">
+
+    <div class="mission-statement">
+      <p>"To leverage artificial intelligence to empower individuals — making AI accessible, understandable, and beneficial for everyone, regardless of background or expertise."</p>
+    </div>
+
+    <p style="margin-bottom:40px; font-size:1.05rem;">At ReEnvision, we believe that artificial intelligence is a transformative technology with the potential to uplift people from all walks of life. We envision a future where AI is not a source of anxiety or inequality, but a catalyst for personal and professional growth.</p>
+
+    <!-- Accordion: Who We Are -->
+    <div class="accordion">
+      <button class="accordion-header" onclick="toggleAcc(this)">
+        <span>Who We Are</span>
+        <span class="acc-icon">+</span>
+      </button>
+      <div class="accordion-body">
+        <p>ReEnvision was founded in 2024 by a group of driven and forward-thinking students who recognized the growing need to address technology inequality. Our team has since grown to include a diverse group of professionals, educators, and volunteers united by a single goal: to leverage our collective skills and create a lasting, positive impact on society.</p>
+        <p>We are a blend of experienced professionals from the tech and education sectors, passionate educators dedicated to creating accessible learning opportunities, and enthusiastic volunteers who share our vision. This diversity of backgrounds and expertise is our greatest strength — allowing us to approach challenges from multiple perspectives and develop truly innovative solutions.</p>
+        <div class="team-highlights">
+          <div class="team-tag">🧑‍💻 Tech Professionals</div>
+          <div class="team-tag">👩‍🏫 Educators</div>
+          <div class="team-tag">🙌 Community Volunteers</div>
+        </div>
+        <div style="margin-top:24px"><a href="team.html" class="btn btn-outline-dark">Meet the full team →</a></div>
+      </div>
+    </div>
+
+    <!-- Accordion: Our Values -->
+    <div class="accordion">
+      <button class="accordion-header" onclick="toggleAcc(this)">
+        <span>Our Values</span>
+        <span class="acc-icon">+</span>
+      </button>
+      <div class="accordion-body">
+        <p><strong>Accessibility:</strong> We believe education is a right, not a privilege. Every program we build is designed to be approachable for learners with no prior AI experience.</p>
+        <p><strong>Equity:</strong> Technology inequality is a real and growing problem. We direct our energy specifically toward students and communities who have historically been left out of the tech conversation.</p>
+        <p><strong>Responsibility:</strong> We don't just teach how to use AI — we teach how to question it, audit it, and hold it accountable. Ethical development is part of every curriculum.</p>
+        <p><strong>Community:</strong> Learning is social. We build environments where students collaborate, challenge each other, and grow together rather than in isolation.</p>
+        <p><strong>Impact:</strong> We measure success not in completion rates, but in the real-world problems our learners go on to solve.</p>
+      </div>
+    </div>
+
+    <!-- Accordion: Our Story -->
+    <div class="accordion">
+      <button class="accordion-header" onclick="toggleAcc(this)">
+        <span>Our Story</span>
+        <span class="acc-icon">+</span>
+      </button>
+      <div class="accordion-body">
+        <p>ReEnvision began as a conversation between students who kept asking the same question: why does cutting-edge AI education only reach students who already have access to elite institutions? Founded in 2024, we started with a single workshop series and a determination to do things differently.</p>
+        <p>Today, we've built a community of over 150 active contributors, partnered with 20 organizations across the country, and produced more than 250 hours of curriculum — all freely available. We're just getting started.</p>
+      </div>
+    </div>
+
+    <!-- Accordion: Education Philosophy -->
+    <div class="accordion">
+      <button class="accordion-header" onclick="toggleAcc(this)">
+        <span>Our Education Philosophy</span>
+        <span class="acc-icon">+</span>
+      </button>
+      <div class="accordion-body">
+        <p>Our focus is on practical, hands-on learning that goes beyond theoretical concepts. We want to equip individuals not only to use AI, but to understand its implications and contribute to its ethical and responsible development.</p>
+        <p>Through our educational programs, community-driven projects, and accessible resources, we aim to foster a new generation of innovators, thinkers, and leaders — people who can solve real-world problems, create new opportunities, and shape a more equitable and prosperous future for all.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ── Our Approach ── -->
+<section class="section values-bg">
+  <div class="container">
+    <div class="text-center">
+      <div class="eyebrow">How We Work</div>
+      <h2>Our Approach</h2>
+      <div class="divider"></div>
+      <p style="max-width:560px;margin:0 auto;">Four pillars guide everything we build — from curriculum design to community events to partnership decisions.</p>
+    </div>
+    <div class="approach-grid">
+      <div class="approach-card">
+        <div class="approach-icon">📚</div>
+        <h3>Education</h3>
+        <p>Providing accessible and hands-on AI education for all skill levels. Our curriculum meets learners where they are — no prerequisites required.</p>
+      </div>
+      <div class="approach-card">
+        <div class="approach-icon">🤝</div>
+        <h3>Community</h3>
+        <p>Building a supportive and collaborative community of learners and innovators who push each other to think bigger and act bolder.</p>
+      </div>
+      <div class="approach-card">
+        <div class="approach-icon">💡</div>
+        <h3>Innovation</h3>
+        <p>Empowering individuals to create innovative solutions to real-world problems — not just to pass a test, but to make a tangible difference.</p>
+      </div>
+      <div class="approach-card">
+        <div class="approach-icon">⚖️</div>
+        <h3>Ethical Development</h3>
+        <p>Promoting the responsible and ethical use of artificial intelligence, ensuring that as AI becomes more powerful, it remains human-centered.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA ── -->
+<section class="section" style="background:linear-gradient(135deg,var(--navy),var(--mid-blue));text-align:center;">
+  <div class="container">
+    <div class="eyebrow" style="color:var(--baby-blue)">Get Involved</div>
+    <h2 style="color:var(--white);margin-bottom:16px">Ready to join the movement?</h2>
+    <p style="color:rgba(255,255,255,0.7);max-width:500px;margin:0 auto 32px">Whether you're a student, educator, or professional — there's a place for you at ReEnvision.</p>
+    <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap">
+      <a href="events.html" class="btn btn-primary">See Upcoming Events</a>
+      <a href="contact.html" class="btn btn-outline">Reach Out</a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo">Re<span>Envision</span></div>
+        <p>Leveraging artificial intelligence to empower individuals and bridge the digital divide.</p>
+      </div>
+      <div class="footer-col"><h5>Organization</h5><a href="mission.html">Mission</a><a href="team.html">Team</a><a href="impact.html">Impact</a></div>
+      <div class="footer-col"><h5>Programs</h5><a href="events.html">Events</a><a href="events.html">Workshops</a><a href="events.html">Webinars</a></div>
+      <div class="footer-col"><h5>Connect</h5><a href="contact.html">Contact Us</a><a href="contact.html">Volunteer</a><a href="contact.html">Partner With Us</a></div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2024 ReEnvision. All rights reserved.</span>
+      <span>Founded 2024 · Making AI accessible for all</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+function toggleAcc(btn) {
+  const isOpen = btn.classList.contains('open');
+  document.querySelectorAll('.accordion-header').forEach(h => {
+    h.classList.remove('open');
+    h.nextElementSibling.classList.remove('open');
+  });
+  if (!isOpen) {
+    btn.classList.add('open');
+    btn.nextElementSibling.classList.add('open');
+  }
+}
+</script>
+</body>
+</html>
