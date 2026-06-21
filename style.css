@@ -303,3 +303,39 @@ h3 { font-size: 1.75rem; margin-bottom: 12px; }
 .page-hero-inner p {
   color: rgba(255, 255, 255, 0.88) !important; /* Forces supporting text elements readable */
 }
+/* ==========================================================================
+   CONTACT US HERO OVERLAY & CONTRAST RECONCILIATION
+   ========================================================================= */
+.page-hero {
+  background: linear-gradient(135deg, #1d588a 0%, #1f639e 100%) !important;
+  padding: 100px 0 80px !important;
+  color: #ffffff !important;
+}
+
+/* Forces the small uppercase text to stand out in brand ice-blue */
+.page-hero .eyebrow, 
+.page-hero-inner .eyebrow {
+  color: #F0F8FF !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.1em;
+  margin-bottom: 12px;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* Forces the main "We'd Love to Hear From You" title to 100% crisp white */
+.page-hero h1, 
+.page-hero-inner h1 {
+  color: #ffffff !important;
+  font-family: 'Garamond', 'Times New Roman', serif !important;
+  font-size: 3rem !important;
+  margin-bottom: 16px;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Fixes any subtext description paragraph font visibility inside the hero */
+.page-hero p, 
+.page-hero-inner p {
+  color: rgba(255, 255, 255, 0.9) !important;
+  font-family: 'Montserrat', sans-serif !important;
+  max-width: 600px;
+}
