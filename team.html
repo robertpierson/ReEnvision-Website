@@ -29,6 +29,15 @@
     .join-strip p    { color: rgba(255,255,255,0.72); max-width:480px; margin:0 auto 32px; }
     .join-strip .eyebrow { color: var(--baby-blue); }
     .join-btns { display:flex; gap:16px; justify-content:center; flex-wrap:wrap; }
+    
+    /* Styled team image class to replace old avatars smoothly */
+    .team-img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 16px;
+    }
   </style>
 </head>
 <body>
@@ -50,7 +59,6 @@
   </div>
 </nav>
 
-<!-- ── Page Hero ── -->
 <section class="page-hero">
   <div class="container page-hero-inner">
     <div class="eyebrow">The People Behind the Mission</div>
@@ -59,7 +67,6 @@
   </div>
 </section>
 
-<!-- ── Team Grid ── -->
 <section class="section">
   <div class="container">
     <div class="text-center">
@@ -72,80 +79,37 @@
     <div class="team-grid" style="margin-top:56px">
 
       <div class="team-card">
-        <div class="team-avatar">AJ</div>
-        <h4>Alex Johnson</h4>
-        <div class="role">Executive Director</div>
-        <p>Former ML engineer turned nonprofit founder. Alex leads ReEnvision's strategy and partnerships with 8 years in edtech.</p>
+        <img src="Sharvin goyal.webp" alt="Sharvin Goyal" class="team-img">
+        <h4>Sharvin Goyal</h4>
+        <div class="role">President and Founder</div>
+        <p>Leads ReEnvision's strategic growth, partnerships, and overarching mission to democratize artificial intelligence education globally.</p>
       </div>
 
       <div class="team-card">
-        <div class="team-avatar">MR</div>
-        <h4>Maya Rodriguez</h4>
-        <div class="role">Director of Education</div>
-        <p>Curriculum designer and former high school STEM teacher passionate about making complex ideas approachable for all learners.</p>
+        <img src="robert pierson.webp" alt="Robert Pierson" class="team-img">
+        <h4>Robert Pierson</h4>
+        <div class="role">Head of Operations</div>
+        <p>Manages internal logistics, workflow deployment, and coordinates execution strategies to keep our global initiatives running smoothly.</p>
       </div>
 
       <div class="team-card">
-        <div class="team-avatar">DK</div>
-        <h4>Daniel Kim</h4>
-        <div class="role">Head of Technology</div>
-        <p>Full-stack developer and AI researcher. Daniel builds and maintains the tools and platforms that power our programs.</p>
+        <img src="abram acevado.webp" alt="Abram Acevedo" class="team-img">
+        <h4>Abram Acevedo</h4>
+        <div class="role">Social Media Officer</div>
+        <p>Directs digital outreach strategies, designs interactive campaigns, and broadens community engagement across platform ecosystems.</p>
       </div>
 
       <div class="team-card">
-        <div class="team-avatar">SP</div>
-        <h4>Sofia Patel</h4>
-        <div class="role">Community Manager</div>
-        <p>Community builder with a background in social work. Sofia ensures every learner feels welcome and supported from day one.</p>
-      </div>
-
-      <div class="team-card">
-        <div class="team-avatar">JW</div>
-        <h4>James Williams</h4>
-        <div class="role">Partnerships Lead</div>
-        <p>Experienced in nonprofit development, James grows our network of partner organizations and secures funding for new programs.</p>
-      </div>
-
-      <div class="team-card">
-        <div class="team-avatar">LC</div>
-        <h4>Lisa Chen</h4>
-        <div class="role">Ethics Advisor</div>
-        <p>AI ethics researcher and policy expert. Lisa ensures every program we develop upholds standards of fairness and accountability.</p>
-      </div>
-
-      <div class="team-card">
-        <div class="team-avatar">OM</div>
-        <h4>Omar Mansour</h4>
-        <div class="role">Curriculum Developer</div>
-        <p>Former university lecturer turned instructional designer, specializing in making foundational AI concepts tangible and fun.</p>
-      </div>
-
-      <div class="team-card">
-        <div class="team-avatar">PN</div>
-        <h4>Priya Nair</h4>
-        <div class="role">Volunteer Coordinator</div>
-        <p>Organizes and supports 150+ active volunteers across our programs, making sure no contributor ever feels alone in the mission.</p>
-      </div>
-
-      <div class="team-card">
-        <div class="team-avatar">TL</div>
-        <h4>Tyler Lee</h4>
-        <div class="role">Marketing &amp; Outreach</div>
-        <p>Digital strategist and storyteller. Tyler amplifies ReEnvision's work and ensures it reaches the students who need it most.</p>
-      </div>
-
-      <div class="team-card">
-        <div class="team-avatar">RG</div>
-        <h4>Rachel Green</h4>
-        <div class="role">Program Coordinator</div>
-        <p>Operations expert who keeps our events, workshops, and partnerships running smoothly from planning through to delivery.</p>
+        <img src="ali moualla.jpg" alt="Ali Moualla" class="team-img">
+        <h4>Ali Moualla</h4>
+        <div class="role">Technical Development Officer</div>
+        <p>Drives full-stack implementation, designs core infrastructure, and integrates technical systems supporting our software programs.</p>
       </div>
 
     </div>
   </div>
 </section>
 
-<!-- ── Join Strip ── -->
 <section class="join-strip">
   <div class="container">
     <div class="eyebrow">Join Us</div>
