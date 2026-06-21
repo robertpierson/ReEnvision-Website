@@ -1,0 +1,375 @@
+/* ==========================================================================
+   1. GLOBAL VARIABLES & DESIGN SYSTEM
+   ========================================================================== */
+:root {
+  /* Color Palette */
+  --navy: #0a192f;
+  --mid-blue: #172a45;
+  --baby-blue: #30b0f0;
+  --accent: #0070f3;
+  --white: #ffffff;
+  --light-bg: #f4f7fa;
+  --text-dark: #1e293b;
+  --text-mid: #64748b;
+  --border: #e2e8f0;
+
+  /* Typography */
+  --font-display: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+  --font-body: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+
+  /* Sizing & Borders */
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* Shadows */
+  --shadow-card: 0 4px 20px -2px rgba(10, 25, 47, 0.05);
+  --shadow-hover: 0 12px 30px -4px rgba(10, 25, 47, 0.12);
+}
+
+/* ==========================================================================
+   2. BASE STYLES & RESET
+   ========================================================================== */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--white);
+  color: var(--text-dark);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: var(--transition);
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* ==========================================================================
+   3. STRUCTURAL LAYOUT UTILITIES
+   ========================================================================== */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.section {
+  padding: 100px 0;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.divider {
+  width: 48px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--accent), var(--baby-blue));
+  margin: 16px auto 32px;
+  border-radius: 2px;
+}
+
+.eyebrow {
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+  margin-bottom: 12px;
+}
+
+h1 { font-size: 3rem; font-weight: 800; line-height: 1.15; }
+h2 { font-size: 2.25rem; font-weight: 750; line-height: 1.25; color: var(--navy); }
+h3 { font-size: 1.5rem; font-weight: 700; color: var(--navy); }
+h4 { font-size: 1.2rem; font-weight: 600; color: var(--navy); }
+
+/* ==========================================================================
+   4. NAVIGATION BAR
+   ========================================================================== */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(10, 25, 47, 0.95);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 16px 0;
+}
+
+.nav-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-logo {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--white);
+  letter-spacing: -0.01em;
+}
+
+.nav-logo span {
+  color: var(--baby-blue);
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.nav-links a {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--baby-blue);
+}
+
+.nav-links .nav-cta {
+  background: var(--accent);
+  color: var(--white);
+  padding: 10px 20px;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+}
+
+.nav-links .nav-cta:hover {
+  background: #0056b3;
+  transform: translateY(-1px);
+}
+
+/* Mobile Toggle Hamburger Button */
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.nav-toggle span {
+  width: 24px;
+  height: 2px;
+  background-color: var(--white);
+  transition: var(--transition);
+}
+
+/* ==========================================================================
+   5. BUTTON COMPONENTS
+   ========================================================================== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 32px;
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 600;
+  border-radius: var(--radius-sm);
+  transition: var(--transition);
+  border: 2px solid transparent;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: var(--white);
+}
+
+.btn-primary:hover {
+  background: #0056b3;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 112, 243, 0.2);
+}
+
+.btn-outline {
+  background: transparent;
+  border-color: rgba(255, 255, 255, 0.3);
+  color: var(--white);
+}
+
+.btn-outline:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: var(--white);
+  transform: translateY(-2px);
+}
+
+.btn-outline-dark {
+  background: transparent;
+  border-color: var(--border);
+  color: var(--navy);
+}
+
+.btn-outline-dark:hover {
+  background: var(--light-bg);
+  border-color: var(--navy);
+}
+
+/* ==========================================================================
+   6. GRID ARCHITECTURES (TEAM & FOOTER)
+   ========================================================================== */
+/* Team Grid Framework */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 32px;
+}
+
+.team-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 32px 24px;
+  text-align: center;
+  box-shadow: var(--shadow-card);
+  transition: var(--transition);
+}
+
+.team-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-hover);
+  border-color: rgba(48, 176, 240, 0.4);
+}
+
+.team-avatar {
+  width: 72px;
+  height: 72px;
+  background: linear-gradient(135deg, rgba(0, 112, 243, 0.1), rgba(48, 176, 240, 0.1));
+  color: var(--accent);
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-weight: 700;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+}
+
+.team-card .role {
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--baby-blue);
+  letter-spacing: 0.05em;
+  margin-bottom: 12px;
+}
+
+.team-card p {
+  color: var(--text-mid);
+  font-size: 0.9rem;
+}
+
+/* Footer Layout Framework */
+.footer {
+  background: #050c18;
+  color: rgba(255, 255, 255, 0.6);
+  padding: 80px 0 40px;
+  font-size: 0.95rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr repeat(3, 1fr);
+  gap: 64px;
+  margin-bottom: 60px;
+}
+
+.footer-brand .footer-logo {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--white);
+  margin-bottom: 16px;
+}
+
+.footer-brand .footer-logo span {
+  color: var(--baby-blue);
+}
+
+.footer-brand p {
+  font-size: 0.9rem;
+  max-width: 320px;
+  line-height: 1.6;
+}
+
+.footer-col h5 {
+  color: var(--white);
+  font-size: 1rem;
+  margin-bottom: 24px;
+  font-weight: 600;
+}
+
+.footer-col a {
+  display: block;
+  color: rgba(255, 255, 255, 0.55);
+  margin-bottom: 12px;
+  font-size: 0.9rem;
+}
+
+.footer-col a:hover {
+  color: var(--baby-blue);
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding-top: 32px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+/* ==========================================================================
+   7. RESPONSIVE BREAKPOINTS (MEDIA QUERIES)
+   ========================================================================== */
+@media (max-width: 992px) {
+  h1 { font-size: 2.5rem; }
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
+}
+
+@media (max-width: 768px) {
+  .section { padding: 60px 0; }
+  
+  /* Mobile Navigation Hamburger Engine */
+  .nav-toggle { display: flex; }
+  
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 100%; left: 0; right: 0;
+    background: var(--navy);
+    flex-direction: column;
+    padding: 24px;
+    gap: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .nav-links.open {
+    display: flex;
+  }
+  
+  .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+  .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
+}
